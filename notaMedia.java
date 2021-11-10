@@ -1,15 +1,7 @@
-
-//Nombre: Amaia Casas Echevarria.
-//Fecha: 19/11/2021
-//Módulo: Programación.
-//UD3
-//PROG03 Tarea Evaluación	01.Realiza un programa en Java. 
-//Descripción: El programa permitirá calcular la nota media de un estudiante a partir de la calificación del examen final, 
+//DescripciÃ³n: El programa permitirÃ¡ calcular la nota media de un estudiante a partir de la calificaciÃ³n del examen final, 
 //            el examen parcial y las tareas realizadas durante el curso, usando para ello,estructuras condicionales IF-ELSE, 
-//            variables, bucles FOR y métodos con paso de parámetros y sentencia return así como, las funcionalidades de las
-//             clases de las librerías de java.
-//Enlace a	video	autoevaluación: 
-
+//            variables, bucles FOR y mÃ©todos con paso de parÃ¡metros y sentencia return asÃ­ como, las funcionalidades de las
+//             clases de las librerÃ­as de java.
 import java.util.*;
 
 public class notaMedia {
@@ -18,13 +10,13 @@ public class notaMedia {
 	public static final int PUNTOS_PRESENCIALES = 5;
 	public static final int MAX_PRESENCIALES = 30;
 	
-	// Método principal
+	// MÃ©todo principal
 	public static void main(String[] args) {
-		// Objeto tipo Scanner para pedir datos por teclado.Se pasará como parámetro a los métodos que necesiten.
+		// Objeto tipo Scanner para pedir datos por teclado.Se pasarÃ¡ como parÃ¡metro a los mÃ©todos que necesiten.
 		Scanner teclado = new Scanner(System.in);
 				
-		// Configuro el Scanner para que el idioma sea el inglés
-		// Los números double se deberán escribir con punto y no con coma
+		// Configuro el Scanner para que el idioma sea el inglÃ©s
+		// Los nÃºmeros double se deberÃ¡n escribir con punto y no con coma
 		teclado.useLocale(Locale.ENGLISH);      
 		
 		presentacion();
@@ -33,20 +25,20 @@ public class notaMedia {
 	}
 	
 /************************
-* MÉTODO presentación  **
+* MÃ‰TODO presentaciÃ³n  **
 *************************/	   
-// Muestra la descripción del programa.
+// Muestra la descripciÃ³n del programa.
 	public static void presentacion() {
-		System.out.println("Este programa lee las calificaciones de exámenes y tareas\n"
-	                       + "y calcula la nota final del módulo para un estudiante.\n"
-	                       + "También podría hacerlo para 2 estudiantes y comparar sus notas. Funcionaría sin problemas\n");
+		System.out.println("Este programa lee las calificaciones de exÃ¡menes y tareas\n"
+	                       + "y calcula la nota final del mÃ³dulo para un estudiante.\n"
+	                       + "TambiÃ©n podrÃ­a hacerlo para 2 estudiantes y comparar sus notas. FuncionarÃ­a sin problemas\n");
 	}
 	
 /************************
-** MÉTODO calculoNota  **
+** MÃ‰TODO calculoNota  **
 *************************/
-	// Método que contiene la línea de título y otros métodos.
-	// Parámetros : objeto Scanner
+	// MÃ©todo que contiene la lÃ­nea de tÃ­tulo y otros mÃ©todos.
+	// ParÃ¡metros : objeto Scanner
 	// Return: tipo double, devuelve el total de la suma de las notas finales ponderadas.
 	public static double calculoNota(Scanner teclado) {
 				
@@ -65,20 +57,20 @@ public class notaMedia {
 	}
 
 /************************
-***  MÉTODO getNota  ***
+***  MÃ‰TODO getNota  ***
 *************************/
-	// Método que pide por teclado el peso y la calificación del examen,y si se ha obtenido puntos extra,
-	// y calcula la nota final y la ponderada llamando a otros métodos.
-	// Parámetros: Objeto de tipo Scanner para leer datos por teclado.
+	// MÃ©todo que pide por teclado el peso y la calificaciÃ³n del examen,y si se ha obtenido puntos extra,
+	// y calcula la nota final y la ponderada llamando a otros mÃ©todos.
+	// ParÃ¡metros: Objeto de tipo Scanner para leer datos por teclado.
 	public static double getNota(Scanner teclado) {
 	   
 		System.out.println("Introduce el peso del examen (0-100): ");
 	    int peso = teclado.nextInt();
 	         
-	    System.out.println("Introduce la calificación del examen (0-100): ");
+	    System.out.println("Introduce la calificaciÃ³n del examen (0-100): ");
 	    int calificacion = teclado.nextInt();
 	         
-	    System.out.println("¿Has obtenido puntos extra (1=Si, 2=No)? ");
+	    System.out.println("Â¿Has obtenido puntos extra (1=Si, 2=No)? ");
 	    int respuesta = teclado.nextInt();
 	    int puntosExtra = puntosExtra(teclado,respuesta);
 	         
@@ -92,11 +84,11 @@ public class notaMedia {
 	}
 	
 /************************
-***  MÉTODO puntosExtra ***
+***  MÃ‰TODO puntosExtra ***
 *************************/	   
-	// Método que si hay puntos extra, los solicita y lo devuelve
-	// Parámetros: objeto Scanner y valor int que indica si hay puntos extra o no.
-	// Return: tipo int leído.
+	// MÃ©todo que si hay puntos extra, los solicita y lo devuelve
+	// ParÃ¡metros: objeto Scanner y valor int que indica si hay puntos extra o no.
+	// Return: tipo int leÃ­do.
 	public static int puntosExtra(Scanner teclado, int respuesta) {
 		int puntoExtra = 0;
 	    if (respuesta == 1){
@@ -107,10 +99,10 @@ public class notaMedia {
 	}
 	      
 /************************
-***  MÉTODO notaFinal ***
+***  MÃ‰TODO notaFinal ***
 *************************/
-	// Método que calcula la nota final y la restringe a una nota máxima de 100.
-	// Parámetros: dos valores de tipo int que han sido introducidos por teclado desde el método getNota.
+	// MÃ©todo que calcula la nota final y la restringe a una nota mÃ¡xima de 100.
+	// ParÃ¡metros: dos valores de tipo int que han sido introducidos por teclado desde el mÃ©todo getNota.
 	// Return: valor int calculado.
 	public static int notaFinal(int calificacion, int puntosExtra) {	   
 		int notaFinal =  calificacion + puntosExtra; 
@@ -121,32 +113,32 @@ public class notaMedia {
 	}	   
 	   
 /************************
-*  MÉTODO finalPonderada *
+*  MÃ‰TODO finalPonderada *
 *************************/
-	// Método que calcula la nota final ponderada.
-	// Parámetros: dos valores de tipo int necesarios para el calculo de la nota ponderada.
+	// MÃ©todo que calcula la nota final ponderada.
+	// ParÃ¡metros: dos valores de tipo int necesarios para el calculo de la nota ponderada.
 	// Return: valor double calculado.     
 	public static double finalPonderada(int notaFinal, int peso) {
 		return (notaFinal * peso) / 100.0;
 	}  
 /************************
-*****  MÉTODO tareas ****
+*****  MÃ‰TODO tareas ****
 *************************/
-	// Método que solicita por teclado diferentes valores para realizar los calculos y obtener la nota ponderada.
+	// MÃ©todo que solicita por teclado diferentes valores para realizar los calculos y obtener la nota ponderada.
 	// Parametro: objeto Scanner
 	// Return: tipo double con el calculo de la nota final ponderada de las tareas.
 	public static double tareas(Scanner teclado) {
 		System.out.println("Introduce el peso de las tareas (0-100): ");
 	    int peso = teclado.nextInt();
 	    
-	    System.out.println("Introduce el número de tareas: ");
+	    System.out.println("Introduce el nÃºmero de tareas: ");
 	    int numTareas = teclado.nextInt();
 	         
 	    int sumaPuntuacion = 0;
 	    int sumaPuntuacionMax = 0;
 	     
 	    for(int i = 1; i <= numTareas; i++) {	      
-	    	System.out.println("Tarea " + i + " : Introduce la puntuación obtenida y la puntuación máxima:  ");
+	    	System.out.println("Tarea " + i + " : Introduce la puntuaciÃ³n obtenida y la puntuaciÃ³n mÃ¡xima:  ");
 	    	int puntuacion = teclado.nextInt();
 	    	int puntuacionMax = teclado.nextInt();
 	         
@@ -154,7 +146,7 @@ public class notaMedia {
 	    	sumaPuntuacionMax += puntuacionMax;
 	    }
 	               
-	      System.out.println("Introduce el número de presenciales a las que has atendido: ");
+	      System.out.println("Introduce el nÃºmero de presenciales a las que has atendido: ");
 	      int numPresenciales = teclado.nextInt();         
 	      int notaPresencial = numPresenciales * PUNTOS_PRESENCIALES;
 	      if(notaPresencial > MAX_PRESENCIALES) {
@@ -172,17 +164,17 @@ public class notaMedia {
 	      return notaPonderada;	          
 	} 
 /**********************
-****** MÉTODO media ***
+****** MÃ‰TODO media ***
 ***********************/ 
-	// Método que calcula el total de la suma de las notas finales ponderadas, con este resultado y a través de un 'if', dependiendo
-	//  de la puntuación se le asigna un valor y un mensaje que despúes se visualizará por pantalla,
+	// MÃ©todo que calcula el total de la suma de las notas finales ponderadas, con este resultado y a travÃ©s de un 'if', dependiendo
+	//  de la puntuaciÃ³n se le asigna un valor y un mensaje que despÃºes se visualizarÃ¡ por pantalla,
 	// Parametros: Recibe 3 parametros de tipo double, necesarios para calcular el total de la suma de las notas finales ponderadas.
-	//Return: tipo double, devuelve el resultado de la total ponderada que será guardada en una variable para poder compararla con
+	//Return: tipo double, devuelve el resultado de la total ponderada que serÃ¡ guardada en una variable para poder compararla con
 	//    la media de otro alumn@
 	public static double media (double ponderada1, double ponderada2, double ponderada3) {
 	      
 		double totalPonderada = ponderada1 + ponderada2 + ponderada3;
-	    System.out.printf("La calificación total obtenida es: %.1f\n", totalPonderada );
+	    System.out.printf("La calificaciÃ³n total obtenida es: %.1f\n", totalPonderada );
 	                           
 	    String mensaje = "";
 	    double valor = 0;
@@ -194,10 +186,10 @@ public class notaMedia {
 	        mensaje = "Gran trabajo";         
 	    } else if (totalPonderada <= 74.99 && totalPonderada >= 60) {
 	    	valor = 0.7;
-	        mensaje = "Todavía tienes trabajo por hacer";
+	        mensaje = "TodavÃ­a tienes trabajo por hacer";
 	    } else {
 	        valor = 0.0;
-	        mensaje = "Otra vez será";
+	        mensaje = "Otra vez serÃ¡";
 	    }
 	         
 	    System.out.println("La nota final en una escala del 0 al 4 es al menos: " + valor);         
